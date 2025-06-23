@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coffee Shop" />
+    <meta name="keywords" content="Coffee Shop" />
+    <meta name="author" content="Coffee Shop" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Coffee Shop - Order Details</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+    <meta name="theme-color" content="#3C1A17FF" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Coffee Shop" />
+    <meta name="msapplication-TileImage" content="assets/images/favicon.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.css" />
+
+    <!-- Iconly Icon css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/iconly.css" />
+
+    <!-- Style css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header Start -->
+    <header class="header">
+      <div class="logo-wrap">
+        <i class="iconly-Category icli nav-bar"></i>
+        <a href="index.html">
+          <img class="logo logo-w" src="assets/images/logo/logo-w.png" alt="logo" />
+          <img class="logo" src="assets/images/logo/logo.png" alt="logo" />
+        </a>
+      </div>
+      <div class="avatar-wrap">
+        <a href="index.html">
+          <i class="iconly-Home icli"></i>
+        </a>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Start -->
+    <main class="main-wrap order-detail-page mb-xxl">
+      <!-- Order Status Section Start -->
+      <section class="order-status-section">
+        <div class="order-status-wrap">
+          <h1 class="font-md title-color">Order #548475151</h1>
+          <div class="status-box">
+            <span class="status-label font-sm">Status:</span>
+            <span class="status-value font-sm preparing">Preparing</span>
+          </div>
+        </div>
+        <div class="order-time">
+          <span class="font-sm content-color">Ordered on:</span>
+          <span class="font-sm title-color" id="orderDateTime">Sun, 14 Apr, 19:12</span>
+        </div>
+      </section>
+      <!-- Order Status Section End -->
+
+      <!-- Order Items Section Start -->
+      <section class="order-items-section">
+        <h3 class="title-2">Order Items</h3>
+        <div class="order-items">
+          <!-- Item 1 -->
+          <div class="order-item media">
+            <div class="item-img">
+              <img src="assets/images/product/6.png" alt="Americano" />
+            </div>
+            <div class="media-body">
+              <h4 class="font-sm title-color">Americano</h4>
+              <span class="content-color font-xs">1 cup</span>
+              <div class="item-details">
+                <span class="price title-color">$35.00</span>
+                <span class="quantity content-color">Qty: 1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="order-item media">
+            <div class="item-img">
+              <img src="assets/images/product/12.png" alt="Frappe" />
+            </div>
+            <div class="media-body">
+              <h4 class="font-sm title-color">Frappe</h4>
+              <span class="content-color font-xs">1 cup</span>
+              <div class="item-details">
+                <span class="price title-color">$27.00</span>
+                <span class="quantity content-color">Qty: 1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Order Items Section End -->
+
+      <!-- Customer Details Section Start -->
+      <section class="customer-details-section">
+        <h3 class="title-2">Customer Details</h3>
+        <div class="details-wrap">
+          <div class="detail-item">
+            <span class="label font-sm content-color">Name:</span>
+            <span class="value font-sm title-color">John Doe</span>
+          </div>
+          <div class="detail-item">
+            <span class="label font-sm content-color">Table Number:</span>
+            <span class="value font-sm title-color">12</span>
+          </div>
+          <div class="detail-item">
+            <span class="label font-sm content-color">Phone:</span>
+            <span class="value font-sm title-color">+1 234 567 8900</span>
+          </div>
+          <div class="detail-item">
+            <span class="label font-sm content-color">Special Notes:</span>
+            <span class="value font-sm title-color">No sugar in Americano</span>
+          </div>
+        </div>
+      </section>
+      <!-- Customer Details Section End -->
+
+      <!-- Order Summary Section Start -->
+      <section class="order-summary-section">
+        <h3 class="title-2">Order Summary</h3>
+        <div class="summary-wrap">
+          <div class="summary-item">
+            <span class="label">Items Total</span>
+            <span class="value">$62.00</span>
+          </div>
+          <div class="summary-item discount">
+            <span class="label">Discount</span>
+            <span class="value">-$12.00</span>
+          </div>
+          <div class="summary-item total">
+            <span class="label">Total Amount</span>
+            <span class="value">$50.00</span>
+          </div>
+        </div>
+      </section>
+      <!-- Order Summary Section End -->
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer class="footer-wrap">
+      <div class="container">
+        <div class="button-group">
+          <a href="index.html" class="btn-outline font-md">Back to Menu</a>
+          <a href="order-history.html" class="btn-solid font-md">View All Orders</a>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- jquery 3.6.0 -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Theme Setting js -->
+    <script src="assets/js/theme-setting.js"></script>
+
+    <!-- Script js -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Order Detail Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Update order status dynamically
+        function updateOrderStatus(status) {
+          const statusElement = document.querySelector('.status-value');
+          statusElement.className = 'status-value font-sm ' + status.toLowerCase();
+          statusElement.textContent = status;
+        }
+
+        // Format and display current date/time
+        function formatDateTime(date) {
+          const options = { 
+            weekday: 'short', 
+            day: '2-digit', 
+            month: 'short', 
+            hour: '2-digit', 
+            minute: '2-digit',
+            hour12: true 
+          };
+          return date.toLocaleDateString('en-US', options);
+        }
+
+        // Set current date/time
+        const orderDateTime = document.getElementById('orderDateTime');
+        const currentDate = new Date();
+        orderDateTime.textContent = formatDateTime(currentDate);
+
+        // Example: Update order status after 5 seconds (for demo)
+        setTimeout(() => {
+          updateOrderStatus('Ready');
+        }, 5000);
+      });
+    </script>
+  </body>
+</html> 

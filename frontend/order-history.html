@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Coffee Shop" />
+    <meta name="keywords" content="Coffee Shop" />
+    <meta name="author" content="Coffee Shop" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Coffee Shop - Order History</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+    <meta name="theme-color" content="#3C1A17FF" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Coffee Shop" />
+    <meta name="msapplication-TileImage" content="assets/images/favicon.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.css" />
+
+    <!-- Iconly Icon css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/iconly.css" />
+
+    <!-- Style css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header Start -->
+    <header class="header">
+      <div class="logo-wrap">
+        <i class="iconly-Category icli nav-bar"></i>
+        <a href="index.html">
+          <img class="logo logo-w" src="assets/images/logo/logo-w.png" alt="logo" />
+          <img class="logo" src="assets/images/logo/logo.png" alt="logo" />
+        </a>
+      </div>
+      <div class="avatar-wrap">
+        <a href="index.html">
+          <i class="iconly-Home icli"></i>
+        </a>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Start -->
+    <main class="main-wrap order-history-page mb-xxl">
+      <div class="order-history-header">
+        <h1 class="title-color font-md mb-3">Order History</h1>
+        <div class="filter-options mb-3">
+          <select class="form-select" id="orderFilter">
+            <option value="all">All Orders</option>
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Order List Start -->
+      <div class="order-list" id="orderList">
+        <!-- Order Item Template -->
+        <div class="order-item" onclick="viewOrderDetails('ORD-123456-789')">
+          <div class="order-header">
+            <div class="order-id">
+              <h3 class="font-sm title-color">#ORD-123456-789</h3>
+              <span class="font-xs content-color">Today, 2:30 PM</span>
+            </div>
+            <div class="order-status">
+              <span class="status-badge preparing">Preparing</span>
+            </div>
+          </div>
+          <div class="order-details">
+            <div class="items">
+              <span class="font-xs content-color">2x Americano, 1x Frappe</span>
+            </div>
+            <div class="total">
+              <span class="font-sm title-color">$75.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Another Order Item -->
+        <div class="order-item" onclick="viewOrderDetails('ORD-123456-790')">
+          <div class="order-header">
+            <div class="order-id">
+              <h3 class="font-sm title-color">#ORD-123456-790</h3>
+              <span class="font-xs content-color">Yesterday, 4:15 PM</span>
+            </div>
+            <div class="order-status">
+              <span class="status-badge completed">Completed</span>
+            </div>
+          </div>
+          <div class="order-details">
+            <div class="items">
+              <span class="font-xs content-color">1x Cappuccino, 2x Espresso</span>
+            </div>
+            <div class="total">
+              <span class="font-sm title-color">$65.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Orders Message (hidden by default) -->
+        <div id="noOrders" class="no-orders text-center" style="display: none;">
+          <img src="assets/svg/no-order.svg" alt="No Orders" class="mb-3" style="width: 120px;">
+          <h3 class="font-md title-color">No Orders Found</h3>
+          <p class="font-sm content-color">You haven't placed any orders yet.</p>
+          <a href="index.html" class="btn-solid font-md mt-3">Start Ordering</a>
+        </div>
+      </div>
+      <!-- Order List End -->
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer class="footer-wrap">
+      <div class="container">
+        <a href="index.html" class="btn-outline font-md w-100">Back to Menu</a>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- jquery 3.6.0 -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Feather Icon -->
+    <script src="assets/js/feather.min.js"></script>
+
+    <!-- Theme Setting js -->
+    <script src="assets/js/theme-setting.js"></script>
+
+    <!-- Script js -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Order History Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the page
+        loadOrders();
+        
+        // Add filter change listener
+        document.getElementById('orderFilter').addEventListener('change', function() {
+          loadOrders(this.value);
+        });
+      });
+
+      function loadOrders(filter = 'all') {
+        // In a real application, this would fetch orders from a backend
+        // For now, we'll use localStorage to simulate order history
+        const orders = getOrdersFromStorage();
+        
+        if (orders.length === 0) {
+          document.getElementById('orderList').innerHTML = document.getElementById('noOrders').outerHTML;
+          document.getElementById('noOrders').style.display = 'block';
+          return;
+        }
+
+        // Filter orders based on selection
+        const filteredOrders = filterOrders(orders, filter);
+        
+        // Display filtered orders
+        displayOrders(filteredOrders);
+      }
+
+      function getOrdersFromStorage() {
+        // Get orders from localStorage
+        const orders = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+        return orders;
+      }
+
+      function filterOrders(orders, filter) {
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        const monthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+
+        return orders.filter(order => {
+          const orderDate = new Date(order.orderTime);
+          switch(filter) {
+            case 'today':
+              return orderDate >= today;
+            case 'week':
+              return orderDate >= weekAgo;
+            case 'month':
+              return orderDate >= monthAgo;
+            default:
+              return true;
+          }
+        });
+      }
+
+      function displayOrders(orders) {
+        const orderList = document.getElementById('orderList');
+        orderList.innerHTML = orders.map(order => `
+          <div class="order-item" onclick="viewOrderDetails('${order.orderNumber}')">
+            <div class="order-header">
+              <div class="order-id">
+                <h3 class="font-sm title-color">#${order.orderNumber}</h3>
+                <span class="font-xs content-color">${formatDate(order.orderTime)}</span>
+              </div>
+              <div class="order-status">
+                <span class="status-badge ${order.status.toLowerCase()}">${order.status}</span>
+              </div>
+            </div>
+            <div class="order-details">
+              <div class="items">
+                <span class="font-xs content-color">${formatOrderItems(order.items)}</span>
+              </div>
+              <div class="total">
+                <span class="font-sm title-color">$${order.totalAmount}</span>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function formatDate(dateString) {
+        const date = new Date(dateString);
+        const today = new Date();
+        const yesterday = new Date(today);
+        yesterday.setDate(yesterday.getDate() - 1);
+
+        if (date.toDateString() === today.toDateString()) {
+          return `Today, ${date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+        } else if (date.toDateString() === yesterday.toDateString()) {
+          return `Yesterday, ${date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}`;
+        } else {
+          return date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric',
+            hour: '2-digit', 
+            minute: '2-digit' 
+          });
+        }
+      }
+
+      function formatOrderItems(items) {
+        return items.map(item => `${item.quantity}x ${item.name}`).join(', ');
+      }
+
+      function viewOrderDetails(orderNumber) {
+        window.location.href = `order-detail.html?orderNumber=${orderNumber}`;
+      }
+    </script>
+  </body>
+</html> 

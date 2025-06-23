@@ -1,0 +1,96 @@
+:root {
+  --theme-deafult: #3C1A17FF;
+  --theme-light: #F5F0F0FF;
+  --theme-dark: #2F1512FF;
+}
+
+/* Product Video Styles */
+.product-video-section {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.video-title {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Video in Banner Slider */
+.banner-box .banner video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive video */
+@media (max-width: 768px) {
+  .video-container video,
+  .banner-box .banner video {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container video,
+  .banner-box .banner video {
+    width: 100%;
+  }
+  
+  .video-title {
+    font-size: 16px;
+  }
+}
+
+/* Order Success Page Styles */
+.order-success-page .success-message {
+  padding: 15px;
+  background-color: #F5F0F0FF;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.order-success-page .success-message p {
+  margin-bottom: 5px;
+}
+
+.order-success-page .success-message p:last-child {
+  margin-bottom: 0;
+}
+
+.order-success-page .footer-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.order-success-page .footer-wrap .btn-solid {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+} 
