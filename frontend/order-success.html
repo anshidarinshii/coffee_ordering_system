@@ -42,7 +42,7 @@
     <header class="header">
       <div class="logo-wrap">
         <i class="iconly-Category icli nav-bar"></i>
-        <a href="index.html"> <img class="logo logo-w" src="assets/images/logo/logo-w.png" alt="logo" /></a><a href="index.html"> <img class="logo" src="assets/images/logo/logo.png" alt="logo" /></a>
+        <a href="index.html"> <img class="logo logo-w" src="assets/images/logo/logo-w.png" alt="logo" /></a><a href="index.html"> <img class="logo" src="assets/images/logo/logo.jpg" alt="logo" /></a>
       </div>
       <div class="avatar-wrap">
         <a href="index.html">
@@ -53,34 +53,32 @@
     <!-- Header End -->
 
     <!-- Main Start -->
-    <main class="main-wrap order-success-page mb-xxl">
+    <main class="main-wrap order-success-page mb-xxl improved-order-success">
       <!-- Banner Section Start -->
-      <section class="banner-section">
-        <div class="banner-wrap">
-          <img src="assets/svg/order-success.svg" alt="order-success" />
+      <section class="banner-section d-flex flex-column align-items-center text-center">
+        <div class="banner-wrap mb-3">
+          <img src="assets/svg/order-success.svg" alt="order-success" class="img-fluid" style="max-width:180px;" />
         </div>
-
         <div class="content-wrap">
-          <h1 class="font-lg title-color">Thank you for your order!</h1>
-          <p class="font-sm content-color">Your order has been placed successfully. We'll prepare it and serve it to your table shortly.</p>
+          <h1 class="font-lg title-color mb-2">Thank you for your order!</h1>
+          <p class="font-sm content-color mb-0">Your order has been placed successfully. We'll prepare it and serve it to your table shortly.</p>
         </div>
       </section>
       <!-- Banner Section End -->
 
       <!-- Order Id Section Start -->
-      <section class="order-id-section">
-        <div class="media">
-          <span><i class="iconly-Calendar icli"></i></span>
+      <section class="order-id-section d-flex flex-wrap justify-content-center gap-3 mb-3">
+        <div class="media align-items-center">
+          <span class="me-2"><i class="iconly-Calendar icli"></i></span>
           <div class="media-body">
-            <h2 class="font-sm color-title">Order Date</h2>
+            <h2 class="font-sm color-title mb-1">Order Date</h2>
             <span class="content-color">Sun, 14 Apr, 19:12</span>
           </div>
         </div>
-
-        <div class="media">
-          <span><i class="iconly-Document icli"></i></span>
+        <div class="media align-items-center">
+          <span class="me-2"><i class="iconly-Document icli"></i></span>
           <div class="media-body">
-            <h2 class="font-sm color-title">Order ID</h2>
+            <h2 class="font-sm color-title mb-1">Order ID</h2>
             <span class="content-color">#548475151</span>
           </div>
         </div>
@@ -88,21 +86,19 @@
       <!-- Order Id Section End -->
 
       <!-- Order Detail Start -->
-      <section class="order-detail">
-        <h3 class="title-2">Order Summary</h3>
+      <section class="order-detail card p-3 shadow-sm mb-4 mx-auto" style="max-width:400px;">
+        <h3 class="title-2 mb-3 text-center">Order Summary</h3>
         <!-- Product Detail  Start -->
-        <ul>
-          <li>
+        <ul class="list-unstyled mb-0">
+          <li class="d-flex justify-content-between py-1">
             <span>Order Total</span>
             <span>$220.00</span>
           </li>
-
-          <li>
+          <li class="d-flex justify-content-between py-1">
             <span>Discount Applied</span>
             <span class="font-theme">-$20.00</span>
           </li>
-
-          <li>
+          <li class="d-flex justify-content-between py-2 border-top mt-2">
             <span>Final Amount</span>
             <span class="font-lg title-color">$200.00</span>
           </li>
@@ -114,10 +110,10 @@
     <!-- Main End -->
 
     <!-- Footer Start -->
-    <footer class="footer-wrap footer-button">
+    <footer class="footer-wrap footer-button order-success-footer">
       <div class="success-message text-center mb-3">
-        <p class="font-sm content-color">Your order has been successfully placed!</p>
-        <p class="font-xs content-color">We'll prepare your order and serve it to your table.</p>
+        <p class="font-sm content-color mb-1">Your order has been successfully placed!</p>
+        <p class="font-xs content-color mb-0">We'll prepare your order and serve it to your table.</p>
       </div>
       <button onclick="goToOrderDetails()" class="font-md btn-solid w-100">View Order Details</button>
     </footer>

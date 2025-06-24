@@ -1,0 +1,778 @@
+/* ===========================================
+   CAFE FOOD ORDERING SYSTEM - MAIN STYLES
+   =========================================== */
+
+/* ===========================================
+   CSS VARIABLES & ROOT SETTINGS
+   =========================================== */
+:root {
+  --theme-primary: #0D5B11;      /* Dark Green */
+  --theme-secondary: #24543A;    /* Darker Green */
+  --theme-light: #eaf7eb;        /* Beige */
+  --theme-dark: #1B3A2B;         /* Darkest Green */
+  --text-primary: #222;          /* Dark Text */
+  --text-secondary: #777;        /* Gray Text */
+  --text-light: #fff;            /* White Text */
+  --border-light: #f1f1f1;       /* Light Border */
+  --background-light: #fafafa;   /* Light Background */
+}
+
+/* ===========================================
+   RESET & BASE STYLES
+   =========================================== */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-size: 14px;
+  margin: 0;
+  color: var(--text-primary);
+  background-color: var(--theme-light);
+  font-family: "Mulish", "sans-serif";
+}
+
+/* ===========================================
+   SCROLLBAR STYLES
+   =========================================== */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(128, 128, 128, 0.192);
+  background-color: #f5f5f5;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+  background-color: #f5f5f5;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.363);
+  border-radius: 100px;
+}
+
+/* ===========================================
+   TYPOGRAPHY
+   =========================================== */
+h1 {
+  font-size: 38px;
+  line-height: 33px;
+  text-transform: capitalize;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 22px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 16px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+a {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+a:hover {
+  text-decoration: none;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  color: currentColor;
+}
+
+/* ===========================================
+   FONT SIZE UTILITIES
+   =========================================== */
+.font-base {
+  font-size: 14px !important;
+}
+
+.font-xs {
+  font-size: calc(13px + (14 - 13) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+.font-sm {
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+.font-md {
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+.font-lg {
+  font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+.font-xl {
+  font-size: calc(22px + (28 - 22) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+.font-xxl {
+  font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1920 - 320))) !important;
+}
+
+/* ===========================================
+   COLOR UTILITIES
+   =========================================== */
+.title-color {
+  color: var(--text-primary);
+}
+
+.font-white {
+  color: var(--text-light);
+}
+
+.content-color {
+  color: var(--text-secondary);
+}
+
+.font-theme {
+  color: var(--theme-primary) !important;
+}
+
+.font-danger {
+  color: #e93939 !important;
+}
+
+/* ===========================================
+   BACKGROUND UTILITIES
+   =========================================== */
+.bg-theme-theme {
+  background-color: var(--theme-primary);
+}
+
+.bg-theme-theme-light {
+  background-color: var(--theme-light);
+}
+
+.bg-theme-blue {
+  background-color: #F7F2F2FF;
+}
+
+.bg-theme-yellow {
+  background-color: #fff9d8;
+}
+
+.bg-theme-orange {
+  background-color: #fff2ec;
+}
+
+.bg-theme-pink {
+  background-color: #fff2f2;
+}
+
+.bg-theme-purple {
+  background-color: #fdf7ff;
+}
+
+.bg-theme-grey-light {
+  background-color: var(--background-light);
+}
+
+/* ===========================================
+   BORDER UTILITIES
+   =========================================== */
+.border-theme {
+  border: 1px solid var(--theme-secondary);
+}
+
+.border-theme-light {
+  border: 1px solid #F0E8E8FF;
+}
+
+.border-blue {
+  border: 1px solid #F2ECECFF;
+}
+
+.border-yellow {
+  border: 1px solid #fff7ce;
+}
+
+.border-orange {
+  border: 1px solid #ffebe2;
+}
+
+.border-pink {
+  border: 1px solid #ffe8e8;
+}
+
+.border-purple {
+  border: 1px solid #faedff;
+}
+
+.border-grey-light {
+  border: 1px solid #f5f5f5;
+}
+
+/* ===========================================
+   BUTTON STYLES
+   =========================================== */
+.btn-solid {
+  padding: calc(8px + (14 - 8) * ((100vw - 320px) / (1920 - 320))) calc(20px + (34 - 20) * ((100vw - 320px) / (1920 - 320)));
+  background-color: var(--theme-primary);
+  color: var(--text-light);
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid #E8D8D8FF;
+  line-height: 21px;
+  display: inline-block;
+}
+
+.btn-solid:hover {
+  color: var(--text-light);
+  background-color: var(--theme-secondary);
+}
+
+.btn-outline {
+  padding: calc(10px + (14 - 10) * ((100vw - 320px) / (1920 - 320))) calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320)));
+  background-color: var(--text-light);
+  color: var(--theme-primary);
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+  border-radius: 5px;
+  font-weight: 600;
+  border: 1px solid var(--theme-primary);
+  display: inline-block;
+  line-height: 21px;
+}
+
+.btn-outline:hover {
+  color: var(--theme-primary);
+}
+
+.btn-outline-grey {
+  padding: 10px calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320)));
+  background-color: var(--text-light);
+  color: var(--text-secondary);
+  font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+  border-radius: 5px;
+  line-height: 21px;
+  font-weight: 600;
+  border: 1px solid #cacaca;
+  width: 100%;
+  display: inline-block;
+}
+
+.btn-outline-grey:hover {
+  color: var(--text-secondary);
+}
+
+/* ===========================================
+   FORM STYLES
+   =========================================== */
+.form-control {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.custom-form input,
+.custom-form textarea,
+.custom-form select,
+.custom-form .form-control {
+  font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+  padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
+  padding-right: calc(44px + (47 - 44) * ((100vw - 320px) / (1920 - 320)));
+  padding-left: calc(15px + (18 - 15) * ((100vw - 320px) / (1920 - 320)));
+  border-radius: 4px;
+  border: 1px solid #E8D8D8FF;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+}
+
+.custom-form input:focus,
+.custom-form textarea:focus,
+.custom-form select:focus,
+.custom-form .form-control:focus {
+  border-color: var(--theme-primary);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: var(--theme-light);
+}
+
+/* ===========================================
+   LAYOUT UTILITIES
+   =========================================== */
+.main-wrap {
+  padding: 0px 15px;
+}
+
+section,
+.section-p-tb {
+  padding-top: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
+  padding-bottom: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-p-t {
+  padding-top: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.section-p-b {
+  padding-bottom: calc(25px + (30 - 25) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.mb-xxl {
+  margin-bottom: calc(75px + (100 - 75) * ((100vw - 320px) / (1920 - 320)));
+}
+
+/* ===========================================
+   MEDIA & FLEXBOX UTILITIES
+   =========================================== */
+.media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: calc(11px + (15 - 11) * ((100vw - 320px) / (1920 - 320)));
+}
+
+/* ===========================================
+   BADGE STYLES
+   =========================================== */
+.badges-round {
+  padding: 2px 10px;
+  border-radius: 100px;
+}
+
+.badges {
+  padding: 2px 10px;
+  border-radius: 3px;
+}
+
+/* ===========================================
+   FONT WEIGHT UTILITIES
+   =========================================== */
+.fw-600 {
+  font-weight: 600;
+}
+
+/* ===========================================
+   PLUS/MINUS CONTROLS
+   =========================================== */
+.plus-minus {
+  border: 1px solid rgba(11, 175, 154, 0.09);
+  border-radius: 5px;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: var(--text-light);
+  text-align: center;
+}
+
+.plus-minus input {
+  background-color: var(--text-light);
+  color: var(--theme-primary);
+  border: none;
+  font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+  outline: none;
+  width: 35px;
+  text-align: center;
+}
+
+.plus-minus .sub,
+.plus-minus .add {
+  width: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+  height: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+  cursor: pointer;
+}
+
+/* ===========================================
+   RATING STYLES
+   =========================================== */
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating svg {
+  width: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+  height: calc(18px + (20 - 18) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.rating svg:not(:last-of-type) {
+  stroke: #ffbf13;
+  fill: #ffbf13;
+}
+
+.rating svg:last-of-type {
+  stroke: #cacaca;
+  fill: #cacaca;
+}
+
+/* ===========================================
+   HEADER STYLES
+   =========================================== */
+.header {
+  padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.header .logo-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: calc(7px + (12 - 7) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.header .logo-wrap .logo {
+  width: calc(100px + (130 - 100) * ((100vw - 320px) / (1920 - 320)));
+  height: auto;
+}
+
+/* ===========================================
+   FOOTER STYLES
+   =========================================== */
+.footer-wrap {
+  margin: 0 auto;
+  max-width: 767px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))) 0;
+  background-color: var(--theme-primary);
+  z-index: 3;
+}
+
+.footer-wrap .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  margin-top: 8px;
+}
+
+/* ===========================================
+   PRODUCT CARD STYLES
+   =========================================== */
+.product-card {
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  position: relative;
+  background-color: var(--text-light);
+  overflow: hidden;
+}
+
+.product-card .img-wrap {
+  margin-bottom: 10px;
+}
+
+.product-card .img-wrap a img {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product-card .content-wrap {
+  margin-bottom: -5px;
+}
+
+.product-card .content-wrap a {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* ===========================================
+   CATEGORY STYLES
+   =========================================== */
+.catagories-wide .catagories-wrap .nav {
+  position: sticky;
+  top: 15px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 32%;
+  flex: 0 0 32%;
+  border-radius: 0 5px 5px 0;
+  overflow: hidden;
+  background-color: var(--theme-light);
+  margin-left: -15px;
+}
+
+.catagories-wide .catagories-wrap .nav .nav-link {
+  width: 100%;
+  padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) 15px;
+}
+
+.catagories-wide .catagories-wrap .nav .nav-link.active {
+  background-color: var(--background-light);
+}
+
+.catagories-wide .catagories-wrap .tab-content .staples-box > div {
+  background-color: var(--background-light);
+  border-radius: 6px;
+  padding: calc(5px + (20 - 5) * ((100vw - 320px) / (1920 - 320)));
+}
+
+/* ===========================================
+   CART STYLES
+   =========================================== */
+.cart-page .cart-item-wrap .swipe-to-show .media {
+  width: 100%;
+  background-color: var(--background-light);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.cart-page .cart-item-wrap .swipe-to-show .delete-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  background-color: var(--theme-primary);
+  padding: 14px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0 10px 10px 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -60px;
+  z-index: 2;
+}
+
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+@media only screen and (min-width: 767px) {
+  body {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .footer-wrap {
+    max-width: 600px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .custom-scroll-hidden {
+    overflow-x: auto;
+  }
+  
+  .custom-scroll-hidden::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+}
+
+/* ===========================================
+   DARK MODE SUPPORT
+   =========================================== */
+[class="dark"] .btn-solid {
+  color: #f0f0f0;
+}
+
+[class="dark"] .btn-solid:hover {
+  color: #f0f0f0;
+}
+
+[class="dark"] .header-sidebar .navigation ul li.active .nav-link {
+  color: #f0f0f0;
+}
+
+/* ===========================================
+   RTL SUPPORT
+   =========================================== */
+[dir="rtl"] .form-control {
+  text-align: right;
+}
+
+[dir="rtl"] .header .logo-wrap a i {
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* ===========================================
+   UTILITY CLASSES
+   =========================================== */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* ===========================================
+   ANIMATIONS & TRANSITIONS
+   =========================================== */
+.transition {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.hover-shadow:hover {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================================
+   END OF STYLES
+   =========================================== */ 
