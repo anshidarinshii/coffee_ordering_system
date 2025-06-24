@@ -169,6 +169,10 @@ a:hover {
   color: var(--text-primary);
 }
 
+.title-color .badges-round.bg-theme-theme {
+  color: #fff !important;
+}
+
 .font-white {
   color: var(--text-light);
 }
@@ -387,10 +391,17 @@ section,
    BADGE STYLES
    =========================================== */
 .badges-round {
-  padding: 2px 10px;
-  border-radius: 100px;
-  background-color: var(--theme-primary);
-  color: var(--text-light);
+  border-radius: 5px;
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+  line-height: 1;
+}
+
+.badges-round.bg-theme-theme {
+  color: #fff !important;
 }
 
 .badges {
