@@ -1,7 +1,7 @@
 :root {
-  --theme-deafult: #3C1A17FF;
-  --theme-light: #F5F0F0FF;
-  --theme-dark: #2F1512FF;
+  --theme-deafult: #0D5B11;
+  --theme-light: #F5F3E7;
+  --theme-dark: #07390a;
 }
 
 .datepicker--cell-day.-other-month-,
